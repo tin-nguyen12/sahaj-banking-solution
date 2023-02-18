@@ -27,6 +27,8 @@ public abstract class Account {
 	public int getBalance() {
 		return balance;
 	}
+
+
 	
 	public abstract boolean deposit(int amount);
 	

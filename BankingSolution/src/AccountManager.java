@@ -112,6 +112,9 @@ public class AccountManager {
 		}
 	}
 	
+	/**Generates the account number
+	 * @return the new account number to be assigned to the account.
+	 */
 	private int generateAccountNumber() {
 		return initalAccountNumber++;
 	}

@@ -35,7 +35,6 @@ public class AccountManagerTest {
 		expectedValue = false;
 		actualValue = accountManager.deposit(1002, 500);
 		Assert.assertEquals(expectedValue, actualValue);
-
 	}
 
 	@Test
@@ -66,6 +65,11 @@ public class AccountManagerTest {
 		actualValue = accountManager.withdrawl(1000, 1000);
 		Assert.assertEquals(expectedValue, actualValue);
 
+		//Withdrawing with insufficient balance
+		expectedValue = false;
+		actualValue = accountManager.withdrawl(1000, 10000);
+		Assert.assertEquals(expectedValue, actualValue);
+		
 		// Withdrawing invalid account
 		expectedValue = false;
 		actualValue = accountManager.deposit(1002, 500);

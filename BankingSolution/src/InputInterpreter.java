@@ -34,6 +34,7 @@ public class InputInterpreter {
 					accountManager.createAccount(inputArray[1]);
 				} catch (Exception e) {
 					printInvalidInput();
+					return false;
 				}
 
 			} else if (inputCommand.equalsIgnoreCase("Deposit")) {
@@ -41,6 +42,7 @@ public class InputInterpreter {
 					accountManager.deposit(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
 				} catch (Exception e) {
 					printInvalidInput();
+					return false;
 				}
 
 			} else if (inputCommand.equalsIgnoreCase("Withdraw")) {
@@ -48,6 +50,7 @@ public class InputInterpreter {
 					accountManager.withdrawl(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
 				} catch (Exception e) {
 					printInvalidInput();
+					return false;
 				}
 
 			} else if (inputCommand.equalsIgnoreCase("Balance")) {
@@ -55,6 +58,7 @@ public class InputInterpreter {
 					accountManager.getBalance(Integer.parseInt(inputArray[1]));
 				} catch (Exception e) {
 					printInvalidInput();
+					return false;
 				}
 
 			} else if (inputCommand.equalsIgnoreCase("Transfer")) {
@@ -63,6 +67,7 @@ public class InputInterpreter {
 							Integer.parseInt(inputArray[3]));
 				} catch (Exception e) {
 					printInvalidInput();
+					return false;
 				}
 
 			} else {
@@ -84,6 +89,30 @@ public class InputInterpreter {
 		if (array.length < 2 || array.length > 4) {
 			printInvalidInput();
 			return false;
+		}
+		else if (array[0].equalsIgnoreCase("Create") || array[0].equalsIgnoreCase("balance"))
+		{
+			if(array.length > 2)
+			{
+				printInvalidInput();
+				return false;
+			}
+		}
+		else if(array[0].equalsIgnoreCase("Deposit") || array[0].equalsIgnoreCase("Withdraw"))
+		{
+			if(array.length > 3)
+			{
+				printInvalidInput();
+				return false;
+			}
+		}
+		else if (array[0].equalsIgnoreCase("Transfer"))
+		{
+			if(array.length < 4)
+			{
+				printInvalidInput();
+				return false;
+			}
 		}
 		return true;
 	}

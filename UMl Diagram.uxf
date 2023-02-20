@@ -1,53 +1,62 @@
-<diagram program="umletino" version="15.0.0"><zoom_level>12</zoom_level><element><id>UMLClass</id><coordinates><x>84</x><y>252</y><w>144</w><h>96</h></coordinates><panel_attributes>BankManager
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>20</x><y>300</y><w>270</w><h>110</h></coordinates><panel_attributes>InputIntepreter
 --
 - AccountManager
-- FileParser
 --
-style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>756</x><y>252</y><w>168</w><h>144</h></coordinates><panel_attributes>Account
++ input(input: String)
+- checkInputValidity(array: String[]): boolean
+- printInvalidInput)_
+style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>830</x><y>290</y><w>310</w><h>180</h></coordinates><panel_attributes>Account
 --
 - accountNumber: int
 - person: Person
 - balance: int
 --
-- getBalance(): int
-- setBalance(): int
-style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>408</x><y>228</y><w>192</w><h>180</h></coordinates><panel_attributes>AccountManager
---
-accountMap: int, Account
---
-- createAccount
-- findAccount(int)
-- setBalance(int)
-- getBalance(int)
-- deposit(int)
-- withdraw(int)
-style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>768</x><y>468</y><w>132</w><h>132</h></coordinates><panel_attributes>SavingAccount
---
-- maxDeposit
-- maxWithdraw
---
-- getBalance(): int
-- setBalance(): int
-style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>828</x><y>384</y><w>36</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>12</x><y>492</y><w>108</w><h>96</h></coordinates><panel_attributes>FileParser
---
++ getBalance(): int
++ getAccountNumber(accountNumber: int): Account
++ getPerson(): Person
++ deposit(amount: int): boolean
++ withdraw(amount: int): boolean
 
+style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>260</y><w>380</w><h>180</h></coordinates><panel_attributes>AccountManager
 --
-parseFile(file)
-style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>144</x><y>492</y><w>120</w><h>132</h></coordinates><panel_attributes>IO
+- accountMap: int, Account
+- initialAccountNumber
 --
++ createAccount(name: String)
++ getBalance(): int
++ deposit(amount: int): boolean
++ withdraw(amount: int): boolean
++ transfer(accountSrc: int, accountDst: int,, amount: int): boolean
+- generateAccountNumber(): int
+- getAccount(accountNumber: int): Account
+style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>510</y><w>210</w><h>210</h></coordinates><panel_attributes>TransactionAccount
+--
+- currentDeposits
+- depositsLimit
+- currentWithdrawls
+- withdrawlsLimit
+- minimumDepositLimit
+- maximumDepositLimit
+- maximumWithdrawlLimit
+- maximumBalance
+--
++ deposit(amount: int): boolean
++ withdraw(amount: int): boolean_
 
+style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>460</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>330</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>920</x><y>100</y><w>120</w><h>110</h></coordinates><panel_attributes>Person
 --
-parseFile(file)
-createAccount()
-findAccount()
-style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>216</x><y>288</y><w>216</w><h>36</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>160;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>192</x><y>336</y><w>36</w><h>180</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>96</x><y>336</y><w>36</w><h>180</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>768</x><y>0</y><w>144</w><h>108</h></coordinates><panel_attributes>Person
---
-- name: String
+- firstName: String
+- lastName: String
 --
 - setName(String)
 - getName(String)
-style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>828</x><y>96</y><w>60</w><h>180</h></coordinates><panel_attributes>lt=-
+style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>200</y><w>50</w><h>110</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=1..*</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>312</y><w>192</w><h>48</h></coordinates><panel_attributes>lt=-
+m2=1..*</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>340</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=0..*</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element></diagram>
+m2=0..*</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>150</y><w>50</w><h>80</h></coordinates><panel_attributes>Client
+--
+
+--
+
+style=autoresize</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>150</x><y>220</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element></diagram>

@@ -1,2 +1,2 @@
 # How to guide
-The start of the program is executed from the Client.java file. Within the Java class there is an input for the file location. User simply needs to add in the location of the file input. An example of the input can be found in the src folder.
+The start of the program is executed from the Client.java file. Within the Java class there is an input for the file location. User simply needs to add in the location of the file input. An example of the input can be found in the src folder (Input.txt). Please ensure you follow the style convention. Failure to do so will cause the program to not execute the line. It will instead tell you there's an error within that line.
